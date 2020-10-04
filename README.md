@@ -1,6 +1,6 @@
 # cputemp
 Linux CPU temperature display command line interface tool.
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE) ![cputemp](https://github.com/wiremoons/cputemp/workflows/cputemp/badge.svg?branch=master) 
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE) ![cputemp](https://github.com/wiremoons/cputemp/workflows/cputemp/badge.svg?branch=main) 
 
 # cputemp
 
