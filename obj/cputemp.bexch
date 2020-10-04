@@ -1,0 +1,21 @@
+[GENERATED OBJECT FILE]
+b__cputemp.o
+[PROJECT FILES]
+/home/simon/projects/ada/cputemp/cputemp.gpr
+20201004075542
+[BOUND OBJECT FILES]
+/home/simon/projects/ada/cputemp/obj/get_linux.o
+/home/simon/projects/ada/cputemp/obj/show_version.o
+/home/simon/projects/ada/cputemp/obj/cputemp.o
+[GENERATED SOURCE FILES]
+b__cputemp.ads
+b__cputemp.adb
+b__cputemp.ali
+[RESULTING OPTIONS]
+-L/home/simon/projects/ada/cputemp/obj/
+-L/home/simon/projects/ada/cputemp/obj/
+-L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+-static
+-static-libgcc
+/usr/lib/gcc/x86_64-linux-gnu/9/adalib/libgnat.a
+-ldl

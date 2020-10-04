@@ -1,0 +1,9 @@
+description = "Tool to check and display the CPU temperature on a Linux OS."
+maintainers = [
+"simon@wiremoons.com",
+]
+maintainers-logins = [
+"wiremoons",
+]
+name = "cputemp"
+version = "1.0.0"

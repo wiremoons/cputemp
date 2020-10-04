@@ -1,0 +1,13 @@
+20201004093902
+-c
+-x
+ada
+-gnatA
+-gnatVa
+-gnatwa
+-O3
+-gnatf
+-gnato
+-fstack-check
+-fPIC
+-static

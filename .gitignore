@@ -3,3 +3,26 @@
 
 # Ada Library Information
 *.ali
+
+# Ada project 'lib/' contents
+lib/*
+
+# Ada project 'bin/' contents
+bin/*
+
+# Alire project 'alire/' contents
+alire/*
+
+# Alire project '.lock' files
+*.lock
+
+# Any 'key.txt' files
+keys.txt
+Keys.txt
+KEYS.txt
+
+# Any 'aspell' back up files are excluded
+*.bak
+
+# Any 'debug.txt' file
+debug.txt
