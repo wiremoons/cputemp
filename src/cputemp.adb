@@ -17,58 +17,58 @@ with Get_Linux;
 
 procedure Cputemp is
 
-   -- Ubuntu CPU temperature file path:
+   --  Ubuntu CPU temperature file path:
    Temp_File : constant String := "/sys/class/thermal/thermal_zone0/temp";
    pragma Debug
      (Put_Line (Standard_Error, "DEBUG: Temp_File is: '" & Temp_File & "'"));
 
    -------------------------------------------
-   -- Parse and manage and command line flags
+   --  Parse and manage and command line flags
    -------------------------------------------
    function Command_Line_Flags_Exist return Boolean is
 
-      -- GNAT.Command_Line variables and config
+      --  GNAT.Command_Line variables and config
       Help_Option    : aliased Boolean := False;
       Version_Option : aliased Boolean := False;
       Config         : Command_Line_Configuration;
 
    begin
-      -- define params for the 'help' option
+      --  define params for the 'help' option
       Define_Switch
         (Config,
          Help_Option'Access,
          Switch      => "-h",
          Long_Switch => "--help",
          Help        => "Show command line usage for application");
-      -- define params for the 'version' option
+      --  define params for the 'version' option
       Define_Switch
         (Config,
          Version_Option'Access,
          Switch      => "-v",
          Long_Switch => "--version",
          Help        => "Show version details");
-      -- Addtional help message as first line of 'Display_Help()'
+      --  Addtional help message as first line of 'Display_Help()'
       Set_Usage
         (Config,
          Usage => "[switches]", -- override default: "[switches] [arguments]";
          Help => "Program displays the current CPU temperature (Linux only).");
 
-      -- cli flags parse using config and above defined switched
+      --  cli flags parse using config and above defined switched
       Getopt (Config);
 
-      -- check if 'version' was requested
+      --  check if 'version' was requested
       if Version_Option then
          Show_Version.Show;
          return True;
       end if;
 
-      -- check if 'help' was requested
+      --  check if 'help' was requested
       if Help_Option then
          Display_Help (Config);
          return True;
       end if;
 
-      -- no flags used - return and run app as normal
+      --  no flags used - return and run app as normal
       return False;
 
    exception
@@ -144,13 +144,13 @@ procedure Cputemp is
 --------------------------
 begin
 
-   -- print info on how to compile a 'release' verison
+   --  print info on how to compile a 'release' verison
    pragma Debug
      (Put_Line
         (Standard_Error,
          "DEBUG: build a 'release' version with: gprclean && gprbuild -XBUILD=release"));
 
-   -- check running on a Linux distro
+   --  check running on a Linux distro
    if not Get_Linux.Is_Linux then
       New_Line (1);
       Put_Line
@@ -160,7 +160,7 @@ begin
       return; -- exit as not detected as Linux
    end if;
 
-   -- check for any user provided command line flags
+   --  check for any user provided command line flags
    if Command_Line_Flags_Exist then
       Set_Exit_Status (Success);
       return; -- exit as flags found and executed
@@ -168,6 +168,7 @@ begin
 
    -- execute the application
    Put ("'" & GNAT.Sockets.Host_Name & "' ");
+   Set_Col (15);
    Put ("CPU => ");
    Ada.Float_Text_IO.Put (Get_Temp_Reading (Temp_File), Aft => 1, Exp => 0);
    Put_Line (" °C");

@@ -27,21 +27,21 @@ package body Show_Version is
    end Set_Debug;
 
    -------------------------------------------
-   -- Collect and display version information
+   --  Collect and display version information
    -------------------------------------------
    procedure Show is
 
-      appVersion : constant String := "1.0.0";
+      appVersion : constant String := "1.0.1";
       Is_Debug   : Boolean         := False;
 
    begin
-      -- only gets called if compliled with: '-gnata'
+      --  only gets called if compliled with: '-gnata'
       pragma Debug (Set_Debug (Is_Debug));
       pragma Debug
         (Put_Line
            (Standard_Error,
             "DEBUG: Running Linux is: " & Get_Linux.Is_Linux'Image));
-      -- start output of version information
+      --  start output of version information
       New_Line (1);
       Put ("'");
       Put (Simple_Name (Ada.Command_Line.Command_Name));
