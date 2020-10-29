@@ -10,6 +10,9 @@ lib/*
 # Ada project 'bin/' contents
 bin/*
 
+# Ada project 'obj/' contents
+obj/*
+
 # Alire project 'alire/' contents
 alire/*
 
