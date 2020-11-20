@@ -27,13 +27,13 @@ Ubuntu, and Raspbian. It also works with other non Raspberry Pi computers too,
 as long as they are using Linux as their operating system (OS). 
 
 I re-wrote the program using [Ada](https://www.adacore.com/about-ada) as way to 
-learn the language, while re-creating a familar tool.
+learn the language, while re-creating a familiar tool.
 
 
 ## Using the Program
 
 When run, the command outputs the following information, that shows the 
-hostname it ran on, and the currect CPU temperature in degrees centigrade 
+hostname it ran on, and the current CPU temperature in degrees centigrade 
 (ie Celsius):
 ```
 'pavimoons' CPU => 45.0 °C
@@ -110,8 +110,8 @@ should also support the install and build as well.
 directory. Just copy it somewhere in your path, and it should work when run.
 
 **NOTE:** The build is statically compiled - so the program should run when moved 
-to a similar CPU based Linux system, without the Ada standard libaries being 
-installed as addtional dependencies.
+to a similar CPU based Linux system, without the Ada standard libraries being 
+installed as additional dependencies.
 
 ## License
 
