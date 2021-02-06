@@ -19,8 +19,7 @@ procedure Cputemp is
 
    --  Ubuntu CPU temperature file path:
    Temp_File : constant String := "/sys/class/thermal/thermal_zone0/temp";
-   pragma Debug
-     (Put_Line (Standard_Error, "DEBUG: Temp_File is: '" & Temp_File & "'"));
+   pragma Debug (Put_Line (Standard_Error, "DEBUG: Temp_File is: '" & Temp_File & "'"));
 
    -------------------------------------------
    --  Parse and manage and command line flags
@@ -48,10 +47,8 @@ procedure Cputemp is
          Long_Switch => "--version",
          Help        => "Show version details");
       --  Addtional help message as first line of 'Display_Help()'
-      Set_Usage
-        (Config,
-         Usage => "[switches]", -- override default: "[switches] [arguments]";
-         Help => "Program displays the current CPU temperature (Linux only).");
+      Set_Usage (Config, Usage => "[switches]", -- override default: "[switches] [arguments]";
+      Help                     => "Program displays the current CPU temperature (Linux only).");
 
       --  cli flags parse using config and above defined switched
       Getopt (Config);
@@ -74,9 +71,7 @@ procedure Cputemp is
    exception
       when Invalid_Switch =>
          New_Line (1);
-         Put_Line
-           (Standard_Error,
-            "Exception caught: caused by the use of an invalid command line switch.");
+         Put_Line (Standard_Error, "Exception caught: caused by the use of an invalid command line switch.");
          New_Line (1);
          Display_Help (Config);
          return True;
@@ -115,9 +110,7 @@ procedure Cputemp is
          return Current_Temp;
       else
          New_Line (2);
-         Put_Line
-           (Standard_Error,
-            "ERROR: unable to locate CPU temperature file:");
+         Put_Line (Standard_Error, "ERROR: unable to locate CPU temperature file:");
          Put_Line (Standard_Error, "  - " & Temp_File);
          New_Line (1);
          Set_Exit_Status (Failure);
@@ -146,16 +139,12 @@ begin
 
    --  print info on how to compile a 'release' verison
    pragma Debug
-     (Put_Line
-        (Standard_Error,
-         "DEBUG: build a 'release' version with: gprclean && gprbuild -XBUILD=release"));
+     (Put_Line (Standard_Error, "DEBUG: build a 'release' version with: gprclean && gprbuild -XBUILD=release"));
 
    --  check running on a Linux distro
    if not Get_Linux.Is_Linux then
       New_Line (1);
-      Put_Line
-        (Standard_Error,
-         "ERROR: requires a Linux distribution to work.");
+      Put_Line (Standard_Error, "ERROR: requires a Linux distribution to work.");
       Set_Exit_Status (Failure);
       return; -- exit as not detected as Linux
    end if;

@@ -66,17 +66,11 @@ package body Get_Linux is
 
                   --  get the identified line from the file
                   OS_Name := To_Unbounded_String (Line);
-                  pragma Debug
-                    (Put_Line
-                       (Standard_Error,
-                        "DEBUG: Unmodified: " & OS_Name));
+                  pragma Debug (Put_Line (Standard_Error, "DEBUG: Unmodified: " & OS_Name));
 
                   -- extract the part required
                   Clean_Pretty_Name (OS_Name);
-                  pragma Debug
-                    (Put_Line
-                       (Standard_Error,
-                        "DEBUG: Cleaned up: " & OS_Name));
+                  pragma Debug (Put_Line (Standard_Error, "DEBUG: Cleaned up: " & OS_Name));
                end if;
             end;
          end loop;

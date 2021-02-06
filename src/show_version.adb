@@ -37,10 +37,7 @@ package body Show_Version is
    begin
       --  only gets called if compliled with: '-gnata'
       pragma Debug (Set_Debug (Is_Debug));
-      pragma Debug
-        (Put_Line
-           (Standard_Error,
-            "DEBUG: Running Linux is: " & Get_Linux.Is_Linux'Image));
+      pragma Debug (Put_Line (Standard_Error, "DEBUG: Running Linux is: " & Get_Linux.Is_Linux'Image));
       --  start output of version information
       New_Line (1);
       Put ("'");
